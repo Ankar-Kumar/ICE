@@ -33,7 +33,6 @@ xlabel('T');
 ylabel('amplitude');
 title('Bipolar Ami');
 
-% hoi ni nicher gula
 index=0;
 last=0;
 state=-volt;

@@ -5,7 +5,7 @@ close all
 
 % modulation
 % bits = input('prompt')
-bits = [0, 1, 1, 0, 0, 1];
+bits = [1,0, 1, 1, 0, 0, 1];
 voltage = 5;
 bitrate = 1;
 n = 1000; % sampling frequency

@@ -14,10 +14,12 @@ T = length(bits)/bitrate; % total time
 N = n*length(bits);
 dt = T/N; % time for each sample point
 t = 0:dt:T;
-x = -voltage * ones(1, length(t));
-disp(x)
+x = zeros(1, length(t));
+%disp(x)
 for i = 1:length(bits)
     if bits(i) == 1
+      x((i-1)*n+1:i*n) = -voltage;
+    else
       x((i-1)*n+1:i*n) = voltage;
     end
 end
@@ -36,9 +38,9 @@ for i = 1:length(t)
   if t(i) > index
     index = index + 1;
     if x(i) > 0
-      result(index) = 1;
-    else
       result(index) = 0;
+    else
+      result(index) = 1;
     end
   end
 end
