@@ -20,8 +20,9 @@ for i=1:len
            tmp=0;
         else
            x((i-1)*n+1:i*n)=-lastbit;
-           lastbit=-lastbit;
-           tmp=lastbit;
+            tmp=-lastbit;
+            lastbit=-lastbit;
+          
         end
     else
         x((i-1)*n+1:i*n)=tmp;
@@ -34,20 +35,20 @@ ylabel('amplitude');
 title('Bipolar Ami');
 
 index=0;
-last=0;
-state=-volt;
+lastbit =- volt;
+tmp=0;
 for i=1:length(t)
     if t(i)>index
         index=index+1;
-        if x(i)==last
+        if x(i)==tmp
            res(index)=0;
         else
             res(index)=1;
-            if abs(last)==volt
-                last=0;
+            if abs(tmp)==volt
+                tmp=0;
             else
-                last=-state;
-                state=last;
+               tmp=-lastbit;
+               lastbit=-lastbit;
             end
         end
     end
