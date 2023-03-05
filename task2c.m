@@ -59,7 +59,7 @@ t = 0:dt:T;
 x = zeros(1, length(t));
 
 for i = 1:length(bits)
-    if bits(i) == 1
+    if bits(i) == 0
       x((i-1)*n+1:(i-1)*n+n/2) = voltage;
       x((i-1)*n+n/2:i*n) = -voltage;
     else
@@ -82,9 +82,9 @@ for i = 1:length(t)
   if t(i) > index
     index = index + 1;
     if x(i) > 0
-      result(index) = 1;
-    else
       result(index) = 0;
+    else
+      result(index) = 1;
     end
   end
 end
@@ -108,7 +108,7 @@ x = zeros(1, length(t));
 lastbit = volt;
 
 for i = 1:length(bits)
-    if bits(i) == 0
+    if bits(i) == 0 %inversion
       x((i-1)*n+1:(i-1)*n+n/2) = -lastbit;
       x((i-1)*n+n/2:i*n) = lastbit;
       
