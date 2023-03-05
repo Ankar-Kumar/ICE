@@ -44,7 +44,7 @@ for i=1:length(t)
            res(index)=0;
         else
             res(index)=1;
-            if abs(tmp)==volt
+            if abs(tmp)==volt       %tmp==volt or -volt
                 tmp=0;
             else
                tmp=-lastbit;
