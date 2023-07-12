@@ -11,8 +11,8 @@ N = n*length(bits);
 dt = T/N; % time for each sample point
 t = 0:dt:T;
 x = zeros(1, length(t));
-lastbit = voltage;
-
+lastbit = voltage; %let last bit positive
+ 
 for i = 1:length(bits)
     if bits(i) == 1
       x((i-1)*n+1:i*n) = -lastbit;

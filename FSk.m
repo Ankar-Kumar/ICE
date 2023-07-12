@@ -10,7 +10,7 @@ n= 1000;
 
 T = length(bits);
 t = 0:1/n:T;
-f2=3
+f2=3;
 sig1=am*sin(2*pi*fm*t);
 subplot(4,1,1);
 plot(t,sig1);

@@ -9,11 +9,12 @@ bits = [1,0, 1, 1, 0, 0, 1];
 voltage = 5;
 bitrate = 1;
 n = 1000; % sampling frequency
-T = length(bits)/bitrate; % total time
-N = n*length(bits); % total sampling no.
-dt = T/N; % time for each sample point
+T = length(bits);
+
+dt = 1/n;
 t = 0:dt:T;
 x = zeros(1, length(t));
+disp(length(t));
 for i = 1:length(bits)
     if bits(i) == 1
       x((i-1)*n+1:i*n) = voltage;

@@ -8,7 +8,7 @@ n= 1000;
 T = length(bits);
 t = 0:1/n:T;
 x=zeros(1,length(t));
-for i = 1:length(bits)
+for i = 1:T
   if bits(i) == 1
     x((i-1)*n+1:i*n)  = 1;
  end

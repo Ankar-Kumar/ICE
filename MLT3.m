@@ -15,13 +15,13 @@ tmp=0;
 lastbit=-volt;
 for i=1:len
     if bits(i)==1 
-        if  tmp~=0
+        if  tmp~=0  %previous not zero
            x((i-1)*n+1:i*n)=0;
-           tmp=0;
+           tmp=0; %previous set to 0
         else
            x((i-1)*n+1:i*n)=-lastbit;
-            tmp=-lastbit;
-            lastbit=-lastbit;
+           tmp=-lastbit;
+           lastbit=-lastbit;
           
         end
     else
